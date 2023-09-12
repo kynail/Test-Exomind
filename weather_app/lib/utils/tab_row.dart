@@ -16,7 +16,6 @@ Image _setPicto(List main) {
   String city = "";
 
   main.map((e) => city = e).toList();
-  print(city);
   switch (city) {
     case "Clear":
       return Image.asset("asset/soleil.png");
