@@ -50,6 +50,14 @@ class _TabRowState extends State<TabRow> {
       padding: const EdgeInsets.only(top: 20, bottom: 20),
       child: Container(
         decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                color: Colors.blueGrey.withOpacity(0.3),
+                spreadRadius: 3,
+                blurRadius: 4,
+                offset: const Offset(0, 3),
+              )
+            ],
             color: const Color(0xffDCDCDC),
             borderRadius: BorderRadius.circular(15)),
         child: DataTable(

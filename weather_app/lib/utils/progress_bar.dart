@@ -21,6 +21,14 @@ class _ProgressBarState extends State<ProgressBar> {
             Container(
                 height: double.infinity,
                 decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.blueGrey.withOpacity(0.3),
+                      spreadRadius: 3,
+                      blurRadius: 4,
+                      offset: const Offset(0, 3),
+                    )
+                  ],
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.blue,
                 ),
@@ -28,7 +36,7 @@ class _ProgressBarState extends State<ProgressBar> {
                   borderRadius: BorderRadius.circular(15),
                   value: widget.progress,
                   backgroundColor: const Color(0xffDCDCDC),
-                  color: const Color(0xFF6A5ACD),
+                  color: const Color(0xFFA9A9A9),
                 )),
             Align(
                 alignment: Alignment.center,

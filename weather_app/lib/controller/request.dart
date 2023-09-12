@@ -12,7 +12,7 @@ class RequestApi {
         // print(response.body);
         return Temperature.fromJson(jsonDecode(response.body));
       } else {
-        throw Exception('Failed to load Temp info');
+        throw Exception('Impossible de charger les données de Météo');
       }
     } catch (e) {
       print(e.toString());

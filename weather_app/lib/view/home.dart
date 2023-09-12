@@ -118,14 +118,29 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Padding(
-                  padding: EdgeInsets.all(10),
+                Padding(
+                  padding: const EdgeInsets.all(10),
                   child: Text(
                     "METEO",
                     style: TextStyle(
+                        shadows: <Shadow>[
+                          Shadow(
+                            offset: const Offset(10.0, 10.0),
+                            blurRadius: 3.0,
+                            color: const Color.fromARGB(255, 0, 0, 0)
+                                .withOpacity(0.1),
+                          ),
+                          Shadow(
+                            offset: const Offset(10.0, 10.0),
+                            blurRadius: 8.0,
+                            color: const Color.fromARGB(125, 0, 0, 255)
+                                .withOpacity(0.1),
+                          ),
+                        ],
                         color: Colors.white,
                         fontSize: 50,
-                        fontStyle: FontStyle.italic),
+                        fontStyle: FontStyle.italic,
+                        fontWeight: FontWeight.w900),
                   ),
                 ),
                 elapse < 0
@@ -142,12 +157,29 @@ class _HomePageState extends State<HomePage> {
                         progress: progress, progressStatus: progressStatus)
                     : Container(
                         decoration: BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.blueGrey.withOpacity(0.3),
+                                spreadRadius: 3,
+                                blurRadius: 4,
+                                offset: const Offset(0, 3),
+                              )
+                            ],
                             color: const Color(0xffDCDCDC),
                             borderRadius: BorderRadius.circular(15)),
                         child: TextButton(
                             onPressed: _reset,
                             child: const Text('Recommencer',
                                 style: TextStyle(color: Colors.black)))),
+                elapse > 0
+                    ? Container()
+                    : const Padding(
+                        padding: EdgeInsets.all(10),
+                        child: Text(
+                          "Cliquez sur le bouton pour recharger les données",
+                          style: TextStyle(color: Colors.white, fontSize: 10),
+                        ),
+                      ),
               ],
             ),
           ),
