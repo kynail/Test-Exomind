@@ -16,6 +16,7 @@ Image _setPicto(List main) {
   String city = "";
 
   main.map((e) => city = e).toList();
+  print(city);
   switch (city) {
     case "Clear":
       return Image.asset("asset/soleil.png");
@@ -25,9 +26,12 @@ Image _setPicto(List main) {
       return Image.asset("asset/pluie.png");
     case "Snow":
       return Image.asset("asset/snow.png");
+    case "Fog":
+      return Image.asset("asset/brouillard.png");
     case "Drizzle":
       return Image.asset("asset/pluie");
   }
+  
   return Image.asset("asset/tempete-de-sable.png");
 }
 
